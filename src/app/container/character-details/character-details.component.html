@@ -1,0 +1,24 @@
+<div *ngIf="characterToDisplay.name" class="fixed">
+
+
+    <div class="card shadow-lg">
+        <div class="card-header bg-success text-center">
+            <h3>{{characterToDisplay.name}}</h3>
+        </div>
+        <div class="card-body d-flex flex-column justify-content-center align-items-center">
+            <img [src]="characterToDisplay.image" alt="character image" width="200" >
+            <h5>Character Description</h5>
+            <p>Lorem ipsum dolor sit amet consecte Lorem, ipsum dolor.</p>
+            <ul class=" list-unstyled ">
+                <li>Name: {{characterToDisplay.name}}</li>
+                <li >Status: {{characterToDisplay.status}}</li>
+                <li>species: {{characterToDisplay.species}}</li>
+                <li>Location: {{characterToDisplay.location.name}}</li>
+            </ul>
+        </div>
+    </div>
+    
+
+
+
+</div>

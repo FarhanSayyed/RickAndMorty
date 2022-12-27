@@ -1,0 +1,33 @@
+<div class="card shadow-lg" >
+    <table class="table table-hover table-striped">
+        <thead class="bg-success">
+            <tr>
+               
+                <th>Photo</th>
+                <th>Name</th>
+                <th>Status</th>
+                <th>Species</th>
+                <th>Location</th>
+            </tr>
+            
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of chararr;let i = index" (click)="sendDataToParent(item)">
+                <ng-container  *ngIf="srchedvalue ==='' || item.name.toLowerCase().includes(srchedvalue | lowercase)">
+              
+                <td><img [src]="item.image" alt="{{item.name}}'s image" title="{{item.name}}'s" width="70"></td>
+                <td>{{item.name}}</td>
+                <td class="alive" [ngStyle]="{color : item.status === 'Alive' ? 'Green' :'Red'}">{{item.status}}</td>
+                <td>{{item.species}}</td>
+                <td>{{item.location.name}}</td>
+                </ng-container>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="container">
+    <div *ngFor="let item of infoarr">
+        <h1>{{item.count}}</h1>
+    </div>
+</div>
